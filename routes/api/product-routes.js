@@ -5,52 +5,54 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // get all products
 router.get('/', (req, res) => {
-    try { 
       Product.findAll({ 
-        include: [ 
+          include: [
+            { 
+            module: Category, 
+            attributes: [ 'id', 'category_name']
+          },
           { 
-            model: Category, 
-          }, 
-          {  
-            model: Tag, 
-          
+            model:Tag, 
+            attributes: ['id', 'tag_name']
           }
-        ]}).then((results => { 
-        res.status(200).json(results); 
-      }))
-    } catch (err) { 
-      res.status(500).json(err); 
-    }
-});
+          ] 
+        })
+      .then(productData => res.json(productData))
+      .catch(err => { 
+        console.log(err); 
+        res.status(500).json(err);
+      });
+    });
 
 // get one product
 router.get('/:id', (req, res) => {
-     try{ 
-       Product.findByPk(req.params.id, { 
-         include: [{
-           model: Category, 
-         }, 
+    Product.findOne( 
+      { 
+        where: { 
+          id: req.params.id
+        }, 
+        include: [{ 
+          model: Category, 
+          attributes: [ 'id', 'category_name']
+        
+        }, 
         { 
-          model: Tag,
+          model: Tag, 
+          attributes: ['id', 'tag_name'],
+          through: ProductTag,
+          as: 'tags'
         }
-      ]}).then((results => { 
-        res.status(200).json(results); 
-      }))
-    } catch (err) { 
+      ]
+      })
+    .then(productData => res.json(productData))
+    .catch(err => { 
+      console.log(err); 
       res.status(500).json(err); 
-    }
-});
+    });
+  });
 
 // create new product
 router.post('/', (req, res) => {
-  /* req.body should look like this...
-    {
-      product_name: "Basketball",
-      price: 200.00,
-      stock: 3,
-      tagIds: [1, 2, 3, 4]
-    }
-  */
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
