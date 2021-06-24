@@ -24,7 +24,7 @@ to run this application clone the repo and run `npm i` in terminal. IN addition 
 ## Images 
 Employee Demonstration GIF: 
 
-![Sample of employee app running]()
+![Sample of employee app running](gif.gif)
 
 Employee Pic: 
 ![Sample of Employee app](getpick.PNG)
