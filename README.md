@@ -22,12 +22,13 @@ to run this application clone the repo and run `npm i` in terminal. IN addition 
   DB_P='Personal Password'
 
 ## Images 
-Employee Demonstration GIF: 
+e-commerce Demonstration GIF: 
 
-![Sample of employee app running](gif.gif)
+![Sample of eccommerce app running](gif.gif)
 
-Employee Pic: 
-![Sample of Employee app](getpick.PNG)
+e-commerce Pic: 
+
+![Sample of ecommerce app](getpick.PNG)
 
 ## Youtube 
 
