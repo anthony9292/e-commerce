@@ -24,7 +24,7 @@ to run this application clone the repo and run `npm i` in terminal. IN addition 
 ## Images 
 e-commerce Demonstration GIF: 
 
-![Sample of e-commerce app running](gif.gif)
+![Sample of e-commerce app running](e-commerce.gif)
 
 e-commerce Pic: 
 
