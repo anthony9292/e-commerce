@@ -24,11 +24,11 @@ to run this application clone the repo and run `npm i` in terminal. IN addition 
 ## Images 
 e-commerce Demonstration GIF: 
 
-![Sample of eccommerce app running](gif.gif)
+![Sample of e-commerce app running](gif.gif)
 
 e-commerce Pic: 
 
-![Sample of ecommerce app](getpick.PNG)
+![Sample of e-commerce app](getpick.PNG)
 
 ## Youtube 
 

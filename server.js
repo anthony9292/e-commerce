@@ -16,6 +16,3 @@ app.use(routes);
 sequalize.sync({ force: false }).then(() => { 
   app.listen(PORT, () => console.log('App listing on port ${PORT}!'));
 });
-
-
-
